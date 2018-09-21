@@ -13,7 +13,7 @@ namespace RaidImitator
         static string dest;
         static void Main(string[] args)
         {
-            string configFile = "%USERPROFILE%\\Documents\\RaidInitatorConfig.txt";
+            string configFile = "%USERPROFILE%\\Documents\\RaidImitatorConfig.txt";
             configFile = Environment.ExpandEnvironmentVariables(configFile);
             string[] srcDest = File.ReadAllLines(configFile);
             src = srcDest[0];
