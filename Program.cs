@@ -5,6 +5,65 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Threading;
+//--------------------------------------------------------------------------------------------------
+// Name:
+// main
+// 
+// Arguments:
+// None: Program doesn't use the C# args parameter explicitly
+//
+// 
+//
+// About: The function reads from a config text file to get the directory needs to read from and 
+// the directory it needs to write to acting as a service making a replica of the directory tree it's reading
+// from the given level down
+// 
+//
+// Name: OnChanged
+//
+// Arguments:
+// FileSystemEventArgs e is the only one that's used to get the path of the changed file or directory.
+//
+//
+// About: Function triggers when a change is detected. If the change is due to a file the file is copied overwritting the
+// old file. If the change is due to a directory the directory created in the destination location.
+//
+//
+// Name: OnRenamed
+//
+// Arguments:
+// FileSystemEventArgs e is the only one that's used to get the path of the old and new file or directory.
+//
+//
+//
+// About: Deletes old file or directory in destination location and copies new one to destination location. Deletes old directories recursively.
+// If directory was renamed it calls a function called setdirs that copies the given directory recurvisely.
+//
+//
+//  
+// Name: OnDeleteed
+//
+// Arguments:
+// FileSystemEventArgs e is the only one that's used to get the path of the deleted file or directory.
+//
+//
+//
+// About: Deletes file or directory in destination location. If directory then it's deleted recursively.
+//
+//  
+// Name: OnCreated
+//
+// Arguments:
+// FileSystemEventArgs e is the only one that's used to get the path of the deleted file or directory.
+//
+//
+//
+// About: Creates file or directiory in destination location.
+//
+// 
+//--------------------------------------------------------------------------------------------------
+
+
 namespace RaidImitator
 {
     class Program
@@ -42,7 +101,7 @@ namespace RaidImitator
             {
                 DateTime dtDest = File.GetLastWriteTime(pathCheck);
                 DateTime dtSrc = File.GetLastWriteTime(e.FullPath);
-                if (dtDest.Equals(dtSrc)) // no changeswere made to the src file so no need to do anything
+                if (dtDest.Equals(dtSrc)) // no changes were made to the src file so no need to do anything
                     return;
                 else
                 {
