@@ -1,7 +1,0 @@
-C:\Users\fgrei\source\repos\RaidImitator\bin\Debug\RaidImitator.exe.config
-C:\Users\fgrei\source\repos\RaidImitator\bin\Debug\RaidImitator.exe
-C:\Users\fgrei\source\repos\RaidImitator\bin\Debug\RaidImitator.pdb
-C:\Users\fgrei\source\repos\RaidImitator\obj\Debug\RaidImitator.csprojAssemblyReference.cache
-C:\Users\fgrei\source\repos\RaidImitator\obj\Debug\RaidImitator.csproj.CoreCompileInputs.cache
-C:\Users\fgrei\source\repos\RaidImitator\obj\Debug\RaidImitator.exe
-C:\Users\fgrei\source\repos\RaidImitator\obj\Debug\RaidImitator.pdb
